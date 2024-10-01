@@ -1,0 +1,37 @@
+    <!-- <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title> This is the expansion title </mat-panel-title>
+        <mat-panel-description> This is a summary of the content </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>This is the primary content of the panel.</p>
+    </mat-expansion-panel>
+     -->
+
+    <!-- @for (user of userData; track user) {
+        <mat-card  class="mt-4">
+        <mat-card-content>
+            <div class="flex gap-2 justify-center items-center text-center">
+                <img class="w-25 h-25 rounded-full" src="{{user.profileImage}}" alt="">
+                <div>
+                    <h2>{{user.name | titlecase}}</h2>
+                    <span>ID: {{user.id | json}}</span><br>
+                    <span>DOB: {{user.birthdate | date}}</span><br>
+                    <span appHighlight color="aqua" >EMAIL: {{user.email}}</span><br>
+                    <span appHighlight color="pink">JOINING DATE: {{user.joiningDate | date}}</span><br>
+                    <span>GENDER: {{user.gender | uppercase}}</span><br>
+                    <span>BALANCE: {{user.balance | currency:'INR'}}</span><br>
+                    <span>SCORE: {{user.score}}</span><br>
+                    @if (user.status ==="active") {
+                        <button color="primary"  mat-flat-button>{{user.status}}</button>
+                    }
+                    @else {
+                        <button color="warn" mat-flat-button>{{user.status}}</button>
+                    }
+                </div>
+            </div>
+           
+        </mat-card-content>
+        </mat-card>
+        } -->
+
+        <app-practice [userData]="userData" username="red" balance="yellow"></app-practice>

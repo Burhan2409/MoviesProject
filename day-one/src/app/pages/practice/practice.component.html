@@ -1,0 +1,61 @@
+<!-- <mat-card>
+    <mat-card-header>
+        <mat-list>
+            <mat-list-item>Burhan</mat-list-item>
+            <mat-list-item>Rahul</mat-list-item>
+            <mat-list-item>Sehwag</mat-list-item>
+           </mat-list>
+    </mat-card-header>
+</mat-card> -->
+
+
+<!-- Interpolation used for data binding-->
+<!-- {{userData | json}} -->
+
+@for (user of userData; track user) {
+
+    <!-- <mat-card class="mt-3">
+        <mat-card-content>
+            {{user | json}}
+        </mat-card-content>
+    </mat-card> -->
+
+    <mat-card class="mt-3">
+        <mat-card-content>
+            <div class="flex justify-start items-center gap-7">
+                <img class="w-45 h-45 rounded-full" src="{{user.profileImage}}" alt="Image-Pic">
+                <div>
+                    <h3  appHighlight [color]="username">{{user.name | titlecase}}</h3>
+                    <p>{{user.email}}</p>
+                    <p>Birthdate : {{user.birthdate | date : 'dd MMM YYYY'}}</p>
+                    <p appHighlight [color]='balance'> : {{user.balance | currency: "₹ "}}</p>
+                    <p>{{user.name | titlecase}} has a score of {{user.score}}</p>
+                    <p>Joining Date is {{user.joiningDate | date : "dd MMM YYYY"}}</p>
+                    @if(user.status === "active") {
+                        <section>
+                            <div class="example-button-row">
+                              <button class="active-btn" mat-flat-button color="primary">Active</button>
+                            </div>
+                          </section>
+                    } @else {
+                        <section>
+                            <div class="example-button-row">
+                              <button class="inactive-btn" mat-flat-button color="warn">Inactive</button>
+                            </div>
+                        </section>
+                    }
+
+
+                <div>
+                    <span>Attending the new event ?</span>
+                    <mat-radio-button>
+                        <mat-radio-button value="1" >Yes</mat-radio-button>
+                        <mat-radio-button value="2">No</mat-radio-button>
+                    </mat-radio-button>
+                </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+}
